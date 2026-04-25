@@ -10,8 +10,8 @@
 
 ## Videos
 
-[Naive & KMP Algorithm](https://www.youtube.com/watch?v=ynv7bbcSLKE)
-[MIT Lecture on Karp-Rabin](https://youtu.be/BRO7mVIFt08?si=AnlbddLAszRvPt8D)
+- [Naive & KMP Algorithm](https://www.youtube.com/watch?v=ynv7bbcSLKE)
+- [MIT Lecture on Karp-Rabin](https://youtu.be/BRO7mVIFt08?si=AnlbddLAszRvPt8D)
 
 ---
 
