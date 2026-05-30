@@ -121,7 +121,6 @@ compiled/
 # Chez Scheme boot/object files
 *.chezscheme.boot
 # Guile compiled objects
-*.go
 
 # ---------------------------------------------------------------------------
 # vim
