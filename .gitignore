@@ -1,47 +1,164 @@
+# ===========================================================================
+# CSC310 .gitignore
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# C / C++ / gcc
+# ---------------------------------------------------------------------------
 # Prerequisites
 *.d
 
-# Compiled Object files
+# Compiled object files
 *.slo
 *.lo
 *.o
 *.obj
 *.class
 
-# Precompiled Headers
+# Precompiled headers
 *.gch
 *.pch
+
+# Preprocessed / assembly intermediates
+*.i
+*.ii
+*.s
 
 # Linker files
 *.ilk
 
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
+# Compiled dynamic libraries
 *.so
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
+# Compiled static libraries
 *.lai
 *.la
 *.a
 *.lib
+
+# Fortran module files
+*.mod
+*.smod
 
 # Executables
 *.exe
 *.out
 *.app
 
-# debug information files
-*.dwo
+# gcov / coverage
+*.gcno
+*.gcda
+*.gcov
 
-# Other files
+# ---------------------------------------------------------------------------
+# gdb / debugging
+# ---------------------------------------------------------------------------
+*.pdb
+*.dwo
+.gdb_history
+core
+core.*
+vgcore.*
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+*.manifest
+*.spec
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------------------
+# Prolog (SWI-Prolog / SICStus)
+# ---------------------------------------------------------------------------
+# SWI-Prolog compiled / quick-load files
+*.qlf
+.swipl_history
+.pl_history
+
+# SICStus compiled / saved states
+*.po
+*.ql
+*.sav
+
+# ---------------------------------------------------------------------------
+# Racket / DrRacket
+# ---------------------------------------------------------------------------
+compiled/
+*.zo
+*.dep
+*.rkt~
+# DrRacket autosave / lock files
+\#*\#
+.\#*
+
+# ---------------------------------------------------------------------------
+# Scheme
+# ---------------------------------------------------------------------------
+*.scm~
+# Chez Scheme boot/object files
+*.chezscheme.boot
+# Guile compiled objects
+*.go
+
+# ---------------------------------------------------------------------------
+# vim
+# ---------------------------------------------------------------------------
+# Swap files
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
 *.swp
 *.swo
+*.swn
+# Session / persistent state
+Session.vim
+Sessionx.vim
+.netrwhist
+# Backups
+*~
 *.bak
+
+# ---------------------------------------------------------------------------
+# VS Code
+# ---------------------------------------------------------------------------
+.vscode/
+*.code-workspace
+.history/
+
+# ---------------------------------------------------------------------------
+# OS cruft
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
