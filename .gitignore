@@ -169,3 +169,5 @@ modules/randomizedalgorithms/miller_rabin
 modules/randomizedalgorithms/fermattest
 modules/greedyalgorithms/offline_caching
 modules/graphs/graph
+modules/hashtables/hash_table
+modules/geometry/geometric_primitives
