@@ -1,7 +1,3 @@
-package videoexamples.searching;
-
-import videoexamples.searching.csc205.StudentRecord;
-
 public class HashingExample {
 
 	public static void main(String[] args) {
