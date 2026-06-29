@@ -9,8 +9,8 @@ safe) and the **cycle property** (the heaviest edge on any cycle is never used).
 
 ## Examples
 
-| Topic | Status | Language(s) | Notes |
-|-------|--------|-------------|-------|
+| Topic | Language(s) | Notes |
+|-------|-------------|-------|
 | Brute-force MST + cut/cycle properties | Python | Enumerates all 55 spanning trees of the demo graph, confirms min weight **14**, and demonstrates the cut and cycle properties. |
 | Kruskal's algorithm | Scheme | **Different graph**. Edge-sorted + union-find. Total weight 14. |
 | Prim's algorithm | Go | **Different graph**. Grows one tree from a start vertex. Total weight 14. |

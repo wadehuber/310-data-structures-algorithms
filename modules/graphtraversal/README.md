@@ -7,8 +7,8 @@ compute along the way (distances, timestamps, components, orderings).
 
 ## Examples
 
-| Topic | Status | Language(s) | Notes |
-|-------|--------|-------------|-------|
+| Topic | Language(s) | Notes |
+|-------|-------------|-------|
 | Topological sort | Python, Java | DFS finish-order ordering of a DAG + cycle detection. CLRS "getting dressed" graph. |
 | Strongly connected components (Kosaraju) | Python, C++ | Two-pass DFS + transpose. CLRS Fig. 22.9 → components {a,b,e}, {c,d}, {f,g}, {h}. |
 | DFS edge classification | Python | Tree / back / forward / cross edges from discovery & finish times; back edge ⇔ cycle. |

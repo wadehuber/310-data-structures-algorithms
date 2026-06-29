@@ -8,8 +8,8 @@ algorithms differ only in the order they relax edges.
 
 ## Examples
 
-| Algorithm | When to use it | Status | Language | Graph |
-|-----------|----------------|--------|----------|-------|
+| Algorithm | When to use it | Language | Graph |
+|-----------|----------------|----------|-------|
 | Dijkstra | Nonnegative weights, single source | Go | CLRS Fig. 24.6 → d = 0,8,9,5,7 |
 | Bellman-Ford | Negative edges; detects negative cycles | Prolog | CLRS Fig. 24.4 → d = 0,2,4,7,−2 |
 | Floyd-Warshall | All-pairs, dense graphs, negative edges OK | Scheme | CLRS Fig. 25.1 (full distance matrix) |
