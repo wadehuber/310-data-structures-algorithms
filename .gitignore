@@ -165,3 +165,6 @@ desktop.ini
 # Miscellaneous
 # ---------------------------------------------------------------------------
 .claude
+modules/randomizedalgorithms/miller_rabin
+modules/randomizedalgorithms/fermattest
+modules/greedyalgorithms/offline_caching
