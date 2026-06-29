@@ -66,5 +66,4 @@ g++ -std=c++17 -O2 counting_sort.cpp -o counting_sort
 
 ```bash
 guile scheme/counting_sort.scm
-# Chez Scheme:  scheme --script scheme/counting_sort.scm
 ```
