@@ -22,28 +22,32 @@ activity(a9, 13, 16).
 % Collect activities sorted by increasing finish time.
 sorted_by_finish(Sorted) :-
     findall(F-act(N,S,F), activity(N,S,F), Pairs),
-    keysort(Pairs, Keyed),               % keysort is stable and orders by key F
+    keysort(Pairs, Keyed),
     strip_keys(Keyed, Sorted).
 
-% strip_keys(+ListOfKey-Value, -ListOfValue)  (portable; avoids library(pairs)).
 strip_keys([], []).
 strip_keys([_-V|T], [V|T2]) :- strip_keys(T, T2).
 
 % greedy(+SortedActivities, +LastFinish, -SelectedNames)
 greedy([], _, []).
 greedy([act(N,S,F)|Rest], LastF, [N|Sel]) :-
-    S >= LastF, !,                       % compatible: take it
+    S >= LastF, !,
     greedy(Rest, F, Sel).
 greedy([act(_,_,_)|Rest], LastF, Sel) :-
-    greedy(Rest, LastF, Sel).            % incompatible: skip it
+    greedy(Rest, LastF, Sel).
+
+% Portable replacement for forall/2
+print_activities([]).
+print_activities([act(N,S,F)|T]) :-
+    format("  ~w  (start ~w, finish ~w)~n", [N,S,F]),
+    print_activities(T).
 
 main :-
     sorted_by_finish(Sorted),
     greedy(Sorted, -1, Selected),
     length(Selected, Count),
-    format("Activities sorted by finish time:~n"),
-    forall(member(act(N,S,F), Sorted),
-           format("  ~w  (start ~w, finish ~w)~n", [N,S,F])),
+    format("Activities sorted by finish time:~n", []),
+    print_activities(Sorted),
     format("~nGreedy selection: ~w~n", [Selected]),
     format("Number selected : ~w~n", [Count]).
 
