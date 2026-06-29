@@ -1,88 +1,42 @@
 # Randomized Algorithms
 
-## Other Videos
+Code examples for **Module 13 — Randomized Algorithms** (CLRS Ch. 5). 
+Randomized algorithms use internal randomness so their expected
+performance holds for *every* input, defeating adversarial orderings. The notes
+also cover probabilistic analysis with indicator random variables.
 
-[CMU 15-251: Great Ideas in Theoretical Computer Science: Randomized Algorithms 2016](https://www.youtube.com/watch?v=V_4oQMKDecg)
+## Las Vegas vs. Monte Carlo 
 
-## Learning Resources
+- **Las Vegas** — always correct, running time varies (e.g. randomized
+  quicksort).
+- **Monte Carlo** — bounded running time, small chance of a wrong answer (e.g.
+  Miller–Rabin, Monte Carlo π).
 
-- **CLRS Chapter 7**: Quicksort and randomization
-- **CLRS Chapter 31**: Number-Theoretic Algorithms and primality testing
-- **Probabilistic Method**: Understanding error bounds and trial requirements
-
-## Example Code
-
-## Algorithms Included
-
-### 1. **Fermat Primality Test** (`fermattest.py`, `fermattest.cpp`)
-
-A probabilistic algorithm for testing primality based on **Fermat's Little Theorem**:
-
-- For a prime `n`, `a^(n-1) ≡ 1 (mod n)` for all `1 < a < n`
-- Tests the property for `k` random values of `a`
-- Returns "definitely composite" or "probably prime"
-
-**Key Features:**
-
-- Time: O(k log³ n) where k = number of trials
-- Handles base cases (n ≤ 3)
-- Includes efficient modular exponentiation
-- Higher trial counts increase confidence in results
-
-**Example Output:**
-
-```
-10: composite
-17: probably prime
-21: composite
-122: composite
-561: composite (Carmichael number - passes Fermat with low probability)
-997: probably prime
-```
-
-### 2. **Randomized Quicksort** (`quicksort.py`)
-
-A divide-and-conquer sorting algorithm with **random pivot selection**:
-
-- Randomly selects a pivot element
-- Partitions into elements: less than, equal to, greater than pivot
-- Recursively sorts partitions and combines results
-
-**Key Features:**
-
-- Expected Time: O(n log n)
-- Worst Case: O(n²) (unlikely with random pivot)
-- Avoids O(n²) worst-case on pre-sorted data (unlike deterministic pivot selection)
-- Handles duplicates naturally with three-way partition
-
-## File Structure
-
-```text
-.
-├── fermattest.py       # Fermat test in Python
-├── fermattest.cpp      # Fermat test in C++
-├── quicksort.py        # Randomized quicksort in Python
-└── README.md           # This file
-```
-
-## Building and Running
-
-### Python
+## Running
 
 ```bash
-python fermattest.py
-python quicksort.py
+# Miller-Rabin
+python3 miller_rabin.py
+gcc -O2 miller_rabin.c -o miller_rabin && ./miller_rabin
+
+# Probabilistic analysis demos
+python3 balls_and_bins.py
+python3 coin_streaks.py
+
+# Monte Carlo pi  (Scheme)
+guile monte_carlo_pi.scm
+
+# Fermat Primality Test
+python3 fermattest.py
+g++ -O2 fermattest.cpp -o fermattest && ./fermattest
+
+# Randomized Quicksort
+python3 quicksort.py
 ```
 
-### C++
+## Where each ties back to the notes
 
-```bash
-g++ -o fermattest fermattest.cpp
-./fermattest
-```
-
-## Notes
-
-- The Fermat test has a non-trivial error probability; multiple trials reduce this
-- Carmichael numbers (e.g., 561) can fool basic Fermat tests; consider Miller-Rabin for production
-- Randomized quicksort performance depends on random pivot quality; in adversarial cases, consider hybrid approaches
+- *Randomized Primality Testing / Miller–Rabin* → `miller_rabin.py`, `miller_rabin.c`, `fermattest.*`
+- *Las Vegas vs. Monte Carlo Algorithms* → `quicksort.py` (Las Vegas), `miller_rabin.*` and `monte_carlo_pi.scm` (Monte Carlo)
+- *Balls and Bins (load balancing/hashing)* → `balls_and_bins.py`
+- *Streaks in Coin Flips* → `coin_streaks.py`
